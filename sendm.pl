@@ -1,5 +1,5 @@
 #!/afs/isis/pkg/perl/bin/perl
-
+use warnings;
 # SEND MAIL SCRIPT 
 
 $mailprog = 'sendmail';
