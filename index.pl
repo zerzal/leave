@@ -5,13 +5,13 @@
 # Set Variables
 #######################
 
-$cgiurl = "http://www.unc.edu/usr-bin/dcayers/LS/CAL/leave.pl";  #un-rem line for production
+$cgiurl = "leave.pl";  #un-rem line for production
 #$cgiurl = "http://www.unc.edu/usr-bin/dcayers/LS/CAL/TEST/leaveXX.pl"; #rem line for production
 $tmptxt = "tempinfo.txt"; #un-rem line for production
 #$tmptxt = "tempinfoX.txt";  #rem line for production
 $ata = "leave.ics"; # ics file to attach for calendar entry  #un-rem line for production
 #$ata = "leaveX.ics"; # ics file to attach for calendar entry  #rem line for production
-$sendmurl = "http://www.unc.edu/usr-bin/dcayers/LS/CAL/sendm.pl"; #un-rem line for production
+$sendmurl = "sendm.pl"; #un-rem line for production
 #$sendmurl = "http://www.unc.edu/usr-bin/dcayers/LS/CAL/TEST/sendmX.pl";  #rem line for production
 $T = "T";
 $Z = "Z";     
