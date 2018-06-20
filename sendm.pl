@@ -4,7 +4,7 @@
 
 $mailprog = 'sendmail';
 $nr = "no_reply\@email.unc.edu";
-$cgiurl = "leave/leave.pl";  # un-rem for production
+$cgiurl = "leave.pl";  # un-rem for production
 #$cgiurl = "http://www.unc.edu/usr-bin/dcayers/LS/CAL/TEST/leaveX.pl"; # rem for production
 $attachment = 'leave.ics'; # un-rem for production
 #$attachment = 'leaveX.ics'; # rem for production
