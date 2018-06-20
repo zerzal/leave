@@ -5,7 +5,7 @@
 # Set Variables
 #######################
 
-$cgiurl = "leave.pl";  #un-rem line for production
+$cgiurl = "index.pl";  #un-rem line for production
 #$cgiurl = "http://www.unc.edu/usr-bin/dcayers/LS/CAL/TEST/leaveXX.pl"; #rem line for production
 $tmptxt = "tempinfo.txt"; #un-rem line for production
 #$tmptxt = "tempinfoX.txt";  #rem line for production
