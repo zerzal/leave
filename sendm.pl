@@ -21,7 +21,7 @@ $cgiurl = "index.pl";  # un-rem for production
    chomp ($fields[4]);
    $super = $fields[3];
    
-    %mail = ( To      => $fields[4],
+    my %mail = ( To      => $fields[4],
             From    => $super,
             Message => "This is a very short message"
            );
