@@ -28,7 +28,7 @@ $cgiurl = "index.pl";  # un-rem for production
 	    
 	    );
 	   
-  $mailcfg{smtp} = [qw(relay.unc.edu)];
+  
   
   sendmail(%mail) or die $Mail::Sendmail::error;
 
