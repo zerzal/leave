@@ -1,8 +1,10 @@
 #!/afs/isis/pkg/perl/bin/perl
 use warnings;
-# SEND SCRIPT 
+use Mail::Sendmail;
 
-$mailprog = 'sendmail';
+# SEND MAIL SCRIPT 
+
+#$mailprog = 'sendmail';
 #$nr = "no_reply\@email.unc.edu";
 $cgiurl = "index.pl";  # un-rem for production
 #$cgiurl = "http://www.unc.edu/usr-bin/dcayers/LS/CAL/TEST/leaveX.pl"; # rem for production
@@ -17,7 +19,16 @@ $cgiurl = "index.pl";  # un-rem for production
    $fields[6] =~ s/T/ /;
    chomp ($fields[3]);
    chomp ($fields[4]);
-   #$super = $fields[3];
+   $super = $fields[3];
+   
+    %mail = ( To      => $fields[4],
+            From    => $super,
+            Message => "This is a very short message"
+           );
+
+  sendmail(%mail) or die $Mail::Sendmail::error;
+
+  print "OK. Log says:\n", $Mail::Sendmail::log;
          
    print "Content-type: text/html\n\n";
    print "<html><head><title>LEAVE REQUEST SENT</title></head>\n";
