@@ -4,6 +4,7 @@ use Mail::Sendmail;
 
 # SEND MAIL SCRIPT 
 
+my @fields, $fields, %mail;
 #$mailprog = 'sendmail';
 #$nr = "no_reply\@email.unc.edu";
 $cgiurl = "index.pl";  # un-rem for production
@@ -21,7 +22,7 @@ $cgiurl = "index.pl";  # un-rem for production
    chomp ($fields[4]);
    $super = $fields[3];
    
-    my %mail = ( To      => $fields[4],
+    %mail = ( To      => $fields[4],
             From    => $super,
             Message => "This is a very short message"
            );
