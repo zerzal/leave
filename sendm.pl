@@ -24,10 +24,11 @@ $cgiurl = "index.pl";  # un-rem for production
    
     %mail = ( To      => $fields[4],
             From    => $super,
-            Message => "This is a very short message"
+            Message => "This is a very short message",
+	    Smtp => 'relay.unc.edu'
            );
 	   
-  $mail{Smtp} = 'relay.unc.edu';
+  #$mail{Smtp} = 'relay.unc.edu';
   
   sendmail(%mail) or die $Mail::Sendmail::error;
 
