@@ -11,7 +11,7 @@ $attachment = 'leave.ics'; # un-rem for production
 #$philly = "olhill\@ad.unc.edu";
 #$philly = "dcayers\@ad.unc.edu";
 
-    open TMP, "<", "tempinfo.txt"; # un-rem for production
+    open TMP, "<", "tempinfo.txt" || die "Can't open tempinfo.txt\n"; # un-rem for production
 	#open TMP, "<", "tempinfoX.txt"; # rem for production
     @fields = <TMP>;
     close TMP;
