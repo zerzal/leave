@@ -4,7 +4,7 @@ use Mail::Sendmail;
 
 # SEND MAIL SCRIPT 
 
-my @fields, $fields, %mail;
+my @fields, $fields, %mail, $mail;
 #$mailprog = 'sendmail';
 #$nr = "no_reply\@email.unc.edu";
 $cgiurl = "index.pl";  # un-rem for production
@@ -26,7 +26,9 @@ $cgiurl = "index.pl";  # un-rem for production
             From    => $super,
             Message => "This is a very short message"
            );
-
+	   
+  $mail{Smtp} = 'relay.unc.edu';
+  
   sendmail(%mail) or die $Mail::Sendmail::error;
 
   print "OK. Log says:\n", $Mail::Sendmail::log;
