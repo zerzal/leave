@@ -33,15 +33,9 @@ $cgiurl = "index.pl";  # un-rem for production
 	    );
 	   
   $mail{Smtp} = 'relay.unc.edu';
-  $mail{'X-custom'} = 'My custom additionnal header';
-  $mail{'mESSaGE : '} = "The message key looks terrible, but works.";
-  # cheat on the date:
-  $mail{Date} = Mail::Sendmail::time_to_date( time() - 86400 );
-
-  if (sendmail %mail) { print "Mail sent OK.\n" }
-  else { print "Error sending mail: $Mail::Sendmail::error \n" }
   
-  #sendmail(%mail) or die $Mail::Sendmail::error;
+  
+  sendmail(%mail) or die $Mail::Sendmail::error;
 
   #print "OK. Log says:\n", $Mail::Sendmail::log;
          
