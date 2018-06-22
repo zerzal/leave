@@ -59,9 +59,9 @@ $smtp->quit(); # all done. message sent.
    #email to supervisor
    my $smtp = Net::SMTP->new('relay.unc.edu') or die $!;
 $smtp->mail( $fields[4] );
-$smtp->to( $super );
+$smtp->to( $fields[4] );
 $smtp->data();
-$smtp->datasend("To: $super\n");
+$smtp->datasend("To: $fields[4]\n");
 $smtp->datasend("From: $fields[4]\n");
 $smtp->datasend("Subject: $fields[2] / $fields[5] to $fields[6] / $fields[7]\n\n");
 $smtp->datasend("\n"); # done with header
