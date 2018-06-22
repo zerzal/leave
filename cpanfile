@@ -1,1 +1,1 @@
-requires 'Mail::Sendmail', '=> 0';
+requires 'Mail::Sendmail', '=> 0.0';
