@@ -3,7 +3,7 @@ use Net::SMTP;
 
 # SEND MAIL SCRIPT 
 
-$mailprog = 'sendmail';
+#$mailprog = 'sendmail';
 $nr = "no_reply\@email.unc.edu";
 $cgiurl = "index.pl";  # un-rem for production
 #$cgiurl = "http://www.unc.edu/usr-bin/dcayers/LS/CAL/TEST/leaveX.pl"; # rem for production
@@ -29,7 +29,7 @@ $smtp->data();
 $smtp->datasend("To: $fields[4]\n");
 $smtp->datasend("From: $super\n");
 $smtp->datasend("Subject: LEAVE REQUEST - FOR YOUR RECORDS\n");
-$smtp->datasend("Content-Type: text/plain; name=\"$attachment\"\n");
+#$smtp->datasend("Content-Type: text/plain; name=\"$attachment\"\n");
 $smtp->datasend("\n"); # done with header
 $smtp->datasend("DOUBLE CLICK ON ATTACHMENT TO ADD EVENT TO OUTLOOK CALENDAR\n\n");
 $smtp->dataend();
@@ -59,9 +59,9 @@ $smtp->quit(); # all done. message sent.
    #email to supervisor
    my $smtp = Net::SMTP->new('relay.unc.edu') or die $!;
 $smtp->mail( $fields[4] );
-$smtp->to( $fields[4] );
+$smtp->to( "dwayne\@n4mio.com" );
 $smtp->data();
-$smtp->datasend("To: $fields[4]\n");
+$smtp->datasend("To: dwayne\@n4mio.com\n");
 $smtp->datasend("From: $fields[4]\n");
 $smtp->datasend("Subject: $fields[2] / $fields[5] to $fields[6] / $fields[7]\n\n");
 $smtp->datasend("\n"); # done with header
