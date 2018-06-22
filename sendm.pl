@@ -1,6 +1,5 @@
 #!/afs/isis/pkg/perl/bin/perl
 use Net::SMTP;
-use MIME::Base64 qw( encode_base64 );
 # SEND MAIL SCRIPT 
 
 #$mailprog = 'sendmail';
@@ -34,12 +33,16 @@ $smtp->datasend("To: $fields[4]\n");
 $smtp->datasend("From: $super\n");
 $smtp->datasend("Subject: LEAVE REQUEST - FOR YOUR RECORDS\n");
 $smtp->datasend("\n"); # done with header
+
+$smtp->datasend("MIME-Version: 1.0\n");
+
+$smtp->datasend("Content-Disposition: attachment; filename=\$attachment\n");
+
+$smtp->datasend("Content-Type: application/text; name= leave.ics ");
+
+$smtp->datasend();
+
 $smtp->datasend("DOUBLE CLICK ON ATTACHMENT TO ADD EVENT TO OUTLOOK CALENDAR\n\n");
-$smtp->datasend("--$boundary\n");
-$smtp->datasend("Content-Type: application/text; name=\"$attachment\"\n");
-$smtp->datasend("Content-Disposition: attachment; filename=\"$attachment\"\n");
-$smtp->datasend("\n");
-$smtp->datasend("@textFile\n");
 $smtp->dataend();
 $smtp->quit(); # all done. message sent.
 
