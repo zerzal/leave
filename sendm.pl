@@ -1,6 +1,6 @@
 #!/afs/isis/pkg/perl/bin/perl
 use Net::SMTP;
-
+use MIME::Base64 qw( encode_base64 );
 # SEND MAIL SCRIPT 
 
 #$mailprog = 'sendmail';
@@ -8,6 +8,10 @@ $nr = "no_reply\@email.unc.edu";
 $cgiurl = "index.pl";  # un-rem for production
 #$cgiurl = "http://www.unc.edu/usr-bin/dcayers/LS/CAL/TEST/leaveX.pl"; # rem for production
 $attachment = 'leave.ics'; # un-rem for production
+my $boundary = 'frontier';
+open(DAT, $attachment) || die("Could not open text file!");
+my @textFile = <DAT>;
+close(DAT);
 #$attachment = 'leaveX.ics'; # rem for production
 
     open TMP, "<", "tempinfo.txt"; # un-rem for production
@@ -29,9 +33,13 @@ $smtp->data();
 $smtp->datasend("To: $fields[4]\n");
 $smtp->datasend("From: $super\n");
 $smtp->datasend("Subject: LEAVE REQUEST - FOR YOUR RECORDS\n");
-$smtp->datasend($attachment);
 $smtp->datasend("\n"); # done with header
 $smtp->datasend("DOUBLE CLICK ON ATTACHMENT TO ADD EVENT TO OUTLOOK CALENDAR\n\n");
+$smtp->datasend("--$boundary\n");
+$smtp->datasend("Content-Type: application/text; name=\"$attachment\"\n");
+$smtp->datasend("Content-Disposition: attachment; filename=\"$attachment\"\n");
+$smtp->datasend("\n");
+$smtp->datasend("@textFile\n");
 $smtp->dataend();
 $smtp->quit(); # all done. message sent.
 
