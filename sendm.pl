@@ -32,7 +32,7 @@ $cgiurl = "index.pl";  # un-rem for production
 	    
 	    );
 	   
-  $mail{Smtp} = 'relay.unc.edu';
+  $mail{Smtp} = "relay.unc.edu";
   
   
   sendmail(%mail) or die $Mail::Sendmail::error;
