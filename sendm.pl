@@ -4,12 +4,10 @@
 
 $mailprog = 'sendmail';
 $nr = "no_reply\@email.unc.edu";
-$cgiurl = "http://www.unc.edu/usr-bin/dcayers/LS/CAL/leave.pl";  # un-rem for production
+$cgiurl = "index.pl";  # un-rem for production
 #$cgiurl = "http://www.unc.edu/usr-bin/dcayers/LS/CAL/TEST/leaveX.pl"; # rem for production
 $attachment = 'leave.ics'; # un-rem for production
 #$attachment = 'leaveX.ics'; # rem for production
-#$philly = "olhill\@ad.unc.edu";
-#$philly = "dcayers\@ad.unc.edu";
 
     open TMP, "<", "tempinfo.txt"; # un-rem for production
 	#open TMP, "<", "tempinfoX.txt"; # rem for production
@@ -62,25 +60,6 @@ $attachment = 'leave.ics'; # un-rem for production
    while( <FILE> ) { print MAIL; };
    close(FILE);
    close (MAIL);
-   
-   #email to philly
-   #open (MAIL, "|$mailprog $philly") || die "Can't open $mailprog!\n";
-   #print MAIL "Reply-to: $fields[4]\n";
-   #print MAIL "From: $fields[4]\n";
-   #print MAIL "To: $philly\n";
-   #print MAIL "Subject: $fields[2] / $fields[5] to $fields[6] / $fields[7]\n\n";
-   #print MAIL "DOUBLE CLICK ON ATTACHMENT TO ADD EVENT TO OUTLOOK CALENDAR\n\n";
-   #print MAIL "ENTERED: $fields[0]\n";
-   #print MAIL "PID: $fields[1]\n";
-   #print MAIL "NAME: $fields[2]\n";
-   #print MAIL "BEGIN: $fields[5]\n";
-   #print MAIL "END: $fields[6]\n";
-   #print MAIL "TYPE: $fields[7]\n";
-   #print MAIL "COMMENTS: $fields[8]\n";
-   #open(FILE, "uuencode $attachment $attachment|");
-   #while( <FILE> ) { print MAIL; };
-   #close(FILE);
-   #close (MAIL);
    
    print "Content-type: text/html\n\n";
    print "<html><head><title>LEAVE REQUEST SENT</title></head>\n";
