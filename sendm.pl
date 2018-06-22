@@ -4,7 +4,7 @@ use warnings;
 
 # SEND MAIL SCRIPT 
 
-my @fields, $fields, %mail, $mail, $mailcfg;
+my (@fields, $fields, %mail, $mail, $mailcfg);
 #$mailprog = 'sendmail';
 #$nr = "no_reply\@email.unc.edu";
 $cgiurl = "index.pl";  # un-rem for production
@@ -30,7 +30,7 @@ $cgiurl = "index.pl";  # un-rem for production
 	   
   
   
-  sendmail(%mail) or die $Mail::Sendmail::error;
+  #sendmail(%mail) or die $Mail::Sendmail::error;
 
   print "OK. Log says:\n", $Mail::Sendmail::log;
          
