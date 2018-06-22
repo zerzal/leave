@@ -1,4 +1,5 @@
 #!/afs/isis/pkg/perl/bin/perl
+use Net::SMTP;
 
 # SEND MAIL SCRIPT 
 
