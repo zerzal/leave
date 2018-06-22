@@ -4,8 +4,9 @@ use warnings;
 
 # SEND MAIL SCRIPT 
 
-my $smtpserver = 'relay.unc.edu';
-my $smtpport = 25;
+#my $smtpserver = 'relay.unc.edu';
+unshift @{$Mail::Sendmail::mailcfg{'smtp'}} , 'relay.unc.edu';
+#my $smtpport = 25;
 my (@fields, $fields, %mail, $mail, $mailcfg);
 
 #$mailprog = 'sendmail';
