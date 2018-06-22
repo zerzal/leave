@@ -1,6 +1,6 @@
 #!/afs/isis/pkg/perl/bin/perl
 use warnings;
-use Mail::Sendmail;
+#use Mail::Sendmail;
 
 # SEND MAIL SCRIPT 
 
