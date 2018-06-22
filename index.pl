@@ -42,7 +42,7 @@ $allow_html = 0;        # 1 = Yes; 0 = No
 
     # If you answered 1 to $mail or $remote_mail you will need to fill out 
     # these variables below:
-$mailprog = 'sendmail';
+#$mailprog = 'sendmail';
 
 # Get the input
 ########################
