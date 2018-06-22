@@ -4,7 +4,10 @@ use warnings;
 
 # SEND MAIL SCRIPT 
 
+my $smtpserver = 'relay.unc.edu';
+my $smtpport = 25;
 my (@fields, $fields, %mail, $mail, $mailcfg);
+
 #$mailprog = 'sendmail';
 #$nr = "no_reply\@email.unc.edu";
 $cgiurl = "index.pl";  # un-rem for production
