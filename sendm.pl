@@ -7,10 +7,6 @@ $nr = "no_reply\@email.unc.edu";
 $cgiurl = "index.pl";  # un-rem for production
 #$cgiurl = "http://www.unc.edu/usr-bin/dcayers/LS/CAL/TEST/leaveX.pl"; # rem for production
 $attachment = 'leave.ics'; # un-rem for production
-my $boundary = 'frontier';
-open(DAT, $attachment) || die("Could not open text file!");
-my @textFile = <DAT>;
-close(DAT);
 #$attachment = 'leaveX.ics'; # rem for production
 
     open TMP, "<", "tempinfo.txt"; # un-rem for production
