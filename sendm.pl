@@ -29,6 +29,7 @@ $smtp->data();
 $smtp->datasend("To: $fields[4]\n");
 $smtp->datasend("From: $super\n");
 $smtp->datasend("Subject: LEAVE REQUEST - FOR YOUR RECORDS\n");
+$smtp->datasend($attachment);
 $smtp->datasend("\n"); # done with header
 $smtp->datasend("DOUBLE CLICK ON ATTACHMENT TO ADD EVENT TO OUTLOOK CALENDAR\n\n");
 $smtp->datasend("Content-Type: application/text; name=\"$attachment\"\n");
