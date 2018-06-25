@@ -1,5 +1,5 @@
 #!/afs/isis/pkg/perl/bin/perl
-use Mime::Lite;
+use MIME::Lite;
 # SEND MAIL SCRIPT 
 
 #$mailprog = 'sendmail';
