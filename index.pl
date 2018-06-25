@@ -2,6 +2,9 @@
 
 # LIFE SAFETY SYSTEMS LEAVE CALENDAR - see $ver below
 
+  use DateTime;
+  use DateTime::TimeZone;
+
 # Set Variables
 #######################
 
@@ -33,7 +36,7 @@ $mdaylen = length $mday;
 	}
 $curzulu = $year.$mon.$mday.$T.$hour.$min.$sec.$Z;
 
-$ver = "1.6";  # SCRIPT VERSION NUMBER
+$ver = "1.7";  # SCRIPT VERSION NUMBER
     
     # Set Your Options:
 $mail = 1;              # 1 = Yes; 0 = No
@@ -72,7 +75,18 @@ foreach $pair (@pairs) {
    $FORM{$name} = $value;
   
 }
-$now = $date;
+
+
+
+
+  my $tz = DateTime::TimeZone->new( name => 'America/New_York' );
+
+  my $dt = DateTime->now();
+  my $offset = $tz->offset_for_datetime($dt);
+  
+  
+  
+my $now = $offset;
 
 # if required information left out
 if (!$FORM{'pid'}) {
