@@ -66,8 +66,8 @@ $attachment = 'leave.ics'; # un-rem for production
    }
    #email to supervisor
    $msg = MIME::Lite->new(
-        From    => $super,
-        To      => $fields[4],
+        From    => $fields[4],
+        To      => $super,
         Subject => "Subject: $fields[2] / $fields[5] to $fields[6] / $fields[7]\n\n",
         Type    =>'multipart/mixed'
 		);
