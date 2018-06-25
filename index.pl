@@ -75,14 +75,8 @@ foreach $pair (@pairs) {
    $FORM{$name} = $value;
   
 }
-
-
-
-
   my $tz = DateTime::TimeZone->new( name => 'America/New_York' );
-
-  my $dt = DateTime->now();
-   
+  my $dt = DateTime->now();  
   $dt->set_time_zone('America/New_York');
   $dt->strftime('%Y-%m-%d-%H:%M:%S %Z');
   my $now = $dt;
