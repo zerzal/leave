@@ -2,8 +2,7 @@
 
 # LIFE SAFETY SYSTEMS LEAVE CALENDAR - see $ver below
 
-  use DateTime;
-  use DateTime::TimeZone;
+ use DateTime::TimeZone;
 
 # Set Variables
 #######################
