@@ -82,11 +82,10 @@ foreach $pair (@pairs) {
   my $tz = DateTime::TimeZone->new( name => 'America/New_York' );
 
   my $dt = DateTime->now();
-  my $offset = $tz->offset_for_datetime($dt);
-  
-  
-  
-my $now = $dt;
+   
+  $dt->set_time_zone('America/New_York');
+  $dt->strftime('%Y-%m-%d-%H:%M:%S %Z');
+  my $now = $dt;
 
 # if required information left out
 if (!$FORM{'pid'}) {
