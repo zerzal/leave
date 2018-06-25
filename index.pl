@@ -86,7 +86,7 @@ foreach $pair (@pairs) {
   
   
   
-my $now = $offset;
+my $now = $dt;
 
 # if required information left out
 if (!$FORM{'pid'}) {
