@@ -193,6 +193,7 @@ print  "<option value='Coombs, Steven'>Coombs, Steven</option>\n";
 print  "<option value='Cooper, Robert'>Cooper, Robert</option>\n";
 print  "<option value='Garvey, Craig'>Garvey, Craig</option>\n";
 print  "<option value='Going, Jamie Lynn'>Going, Jamie Lynne</option>\n";
+print  "<option value='Gusler, Nathan'>Gusler, Nathan</option>\n";
 print  "<option value='Guzi, Mike'>Guzi, Mike</option>\n";
 print  "<option value='Hawkins, Kenneth'>Hawkins, Kenneth</option>\n";
 print  "<option value='Hill, James'>Hill, James</option>\n";
