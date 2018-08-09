@@ -385,7 +385,7 @@ print  "<select name=type>\n";
 print  "<option></option>\n";
 print  "<option value='Vacation'>Vacation</option>\n";
 print  "<option value='Sick'>Sick</option>\n";
-print  "<option value='Bonus 2017'>Bonus 2017</option>\n";
+print  "<option value='Bonus 2018'>Bonus 2018</option>\n";
 print  "<option value='Bonus'>Bonus</option>\n";
 print  "<option value='Civil'>Civil</option>\n";
 print  "<option value='Military'>Military</option>\n";
