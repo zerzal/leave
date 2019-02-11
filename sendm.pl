@@ -22,7 +22,7 @@ $attachment = 'leave.ics'; # un-rem for production
    
    #email to requester
 	$msg = MIME::Lite->new(
-        From    => $super,
+        From    => $nr,
         To      => $fields[4],
         Subject => 'LEAVE REQUEST - FOR YOUR RECORDS',
         Type    =>'multipart/mixed'
