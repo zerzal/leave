@@ -250,7 +250,7 @@ print "<FONT SIZE = 2 color = red>* </font>Choose <b>BEGINNING</b> Day and Hour"
 print "<br><br>";
 
 print "<label for=\"byear\">Year</label>\&nbsp\;\&nbsp\;<select name=byear>\n";
-$byear = 2016;
+$byear = 2018;
 print  "<option></option>\n";
 while($byear < 2025){
 $byear += 1;
