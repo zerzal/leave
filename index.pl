@@ -188,7 +188,6 @@ print  "<option value='Brown, Jason'>Brown, Jason</option>\n";
 print  "<option value='Brown, Wes'>Brown, Wes</option>\n";
 print  "<option value='Burns, Gene'>Burns, Gene</option>\n";
 print  "<option value='Chick, John'>Chick, John</option>\n";
-print  "<option value='Collins, Dustin'>Collins, Dustin</option>\n";
 print  "<option value='Coombs, Steven'>Coombs, Steven</option>\n";
 print  "<option value='Davis, Craige'>Davis, Craige</option>\n";
 print  "<option value='Gusler, Nathan'>Gusler, Nathan</option>\n";
