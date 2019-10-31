@@ -36,7 +36,7 @@ $mdaylen = length $mday;
 	}
 $curzulu = $year.$mon.$mday.$T.$hour.$min.$sec.$Z;
 
-$ver = "1.7";  # SCRIPT VERSION NUMBER
+$ver = "1.8";  # SCRIPT VERSION NUMBER
     
     # Set Your Options:
 $mail = 1;              # 1 = Yes; 0 = No
