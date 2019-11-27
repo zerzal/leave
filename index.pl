@@ -180,6 +180,7 @@ print "<input id=pid name=pid type=text><br><br>";
 print "<FONT SIZE = 2 color = red>* </font>Choose your <b>NAME</b>\:\&nbsp\;\&nbsp\;\n";
 print  "<select name=person>\n";
 print  "<option></option>\n";
+print  "<option value='Arredondo, Braynth'>Arredondo, Braynth</option>\n";
 print  "<option value='Ayers, Dwayne'>Ayers, Dwayne</option>\n";
 print  "<option value='Bradley, Barry'>Bradley, Barry</option>\n";
 print  "<option value='Bass, James'>Bass, James</option>\n";
