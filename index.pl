@@ -219,6 +219,7 @@ print  "<option value='Torain, Maynard'>Torain, Maynard</option>\n";
 print  "<option value='Walker, Andrew'>Walker, Andrew</option>\n";
 print  "<option value='Webster, Cecil'>Webster, Cecil</option>\n";
 print  "<option value='White, Daylan'>White, Daylan</option>\n";
+print  "<option value='Wingler, Danielle'>Wingler, Danielle</option>\n";
 print  "</select>\n";
 print  "<br><br>";
 #Supervisor pick
