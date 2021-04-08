@@ -200,7 +200,6 @@ print  "<option value='Lipscomb, Steven M'>Lipscomb, Steven M</option>\n";
 print  "<option value='Lloyd, Jeremy'>Lloyd, Jeremy</option>\n";
 print  "<option value='McLamb, Sherwood'>McLamb, Sherwood</option>\n";
 print  "<option value='Messier, Curtis'>Messier, Curtis</option>\n";
-# print  "<option value='Miskow, Michael'>Miskow, Michael</option>\n";
 print  "<option value='O\'Toole, James P'>O'Toole, James P</option>\n";
 print  "<option value='Oakley, Michael'>Oakley, Michael</option>\n";
 print  "<option value='Peoples, Lawrence'>Peoples, Lawrence</option>\n";
