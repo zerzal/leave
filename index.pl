@@ -227,7 +227,7 @@ print "<FONT SIZE = 2 color = red>* </font>Who is your <b>SUPERVISOR</b>\?\:\&nb
 print  "<select name=super>\n";
 print  "<option></option>\n";
 print  "<option value='David.Sharpe\@facilities.unc.edu'>Sharpe, David</option>\n";
-#print  "<option value='dayers\@fac.unc.edu'>Ayers, Dwayne</option>\n"; # rem out line for production
+print  "<option value='dayers\@fac.unc.edu'>Ayers, Dwayne</option>\n"; # rem out line for production
 print  "<option value='Todd.Going\@facilities.unc.edu'>Going, Todd</option>\n";
 print  "<option value='Sherwood.McLamb\@facilities.unc.edu'>McLamb, Sherwood</option>\n";
 print  "<option value='michael.d.oakley\@facilities.unc.edu'>Oakley, Michael</option>\n";

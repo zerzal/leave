@@ -13,24 +13,24 @@ $attachment = 'leave.ics'; # un-rem for production
 	#open TMP, "<", "tempinfoX.txt"; # rem for production
     @fields = <TMP>;
     close TMP;
+   $fields[4] =~ s/T/ /;
    $fields[5] =~ s/T/ /;
-   $fields[6] =~ s/T/ /;
+   chomp ($fields[2]);
    chomp ($fields[3]);
-   chomp ($fields[4]);
-   $super = $fields[3];
-   if ($fields[4]){
+   $super = $fields[2];
+   if ($fields[3]){
    
    #email to requester
 	$msg = MIME::Lite->new(
         From    => $nr,
-        To      => $fields[4],
+        To      => $fields[3],
         Subject => 'LEAVE REQUEST - FOR YOUR RECORDS',
         Type    =>'multipart/mixed'
 		);
 		
 	$msg->attach(
         Type     => 'TEXT',
-        Data     => "DOUBLE CLICK ON ATTACHMENT TO ADD EVENT TO OUTLOOK CALENDAR\n\n ENTERED: $fields[0]\n PID: $fields[1]\n NAME: $fields[2]\n BEGIN: $fields[5]\n END: $fields[6]\n TYPE: $fields[7]\n COMMENTS: $fields[8]\n",
+        Data     => "DOUBLE CLICK ON ATTACHMENT TO ADD EVENT TO OUTLOOK CALENDAR\n\n ENTERED: $fields[0]\n NAME: $fields[1]\n BEGIN: $fields[4]\n END: $fields[5]\n TYPE: $fields[6]\n COMMENTS: $fields[7]\n",
 		);
 
 	$msg->attach(
@@ -62,19 +62,19 @@ $attachment = 'leave.ics'; # un-rem for production
    #close (MAIL);
    }
    else {
-   $fields[4] = $nr;
+   $fields[3] = $nr;
    }
    #email to supervisor
    $msg = MIME::Lite->new(
-        From    => $fields[4],
+        From    => $fields[3],
         To      => $super,
-        Subject => "Subject: $fields[2] / $fields[5] to $fields[6] / $fields[7]\n\n",
+        Subject => "Subject: $fields[1] / $fields[4] to $fields[5] / $fields[6]\n\n",
         Type    =>'multipart/mixed'
 		);
 		
 	$msg->attach(
         Type     => 'TEXT',
-        Data     => "DOUBLE CLICK ON ATTACHMENT TO ADD EVENT TO OUTLOOK CALENDAR\n\n ENTERED: $fields[0]\n PID: $fields[1]\n NAME: $fields[2]\n BEGIN: $fields[5]\n END: $fields[6]\n TYPE: $fields[7]\n COMMENTS: $fields[8]\n",
+        Data     => "DOUBLE CLICK ON ATTACHMENT TO ADD EVENT TO OUTLOOK CALENDAR\n\n ENTERED: $fields[0]\n NAME: $fields[1]\n BEGIN: $fields[4]\n END: $fields[5]\n TYPE: $fields[6]\n COMMENTS: $fields[7]\n",
 		);
 
 	$msg->attach(
@@ -110,12 +110,12 @@ $attachment = 'leave.ics'; # un-rem for production
    print "<html><head><title>LEAVE REQUEST SENT</title></head>\n";
    print "<body><FONT SIZE = 5><b>LEAVE REQUEST SENT</b></FONT><br><br>";
    print "<FONT SIZE = 4><b>ENTERED:</b>\&nbsp\;\&nbsp\; $fields[0]<br><br>";
-   print "<b>PID:</b>  $fields[1]<br><br>";
-   print "<b>NAME:</b>  $fields[2]<br><br>";
-   print "<b>BEGIN:</b>  $fields[5]<br><br>";
-   print "<b>END:</b>  $fields[6]<br><br>";
-   print "<b>TYPE:</b>  $fields[7]<br><br>";
-   print "<b>COMMENTS:</b>  $fields[8]<br><br>";
+   #print "<b>PID:</b>  $fields[1]<br><br>";
+   print "<b>NAME:</b>  $fields[1]<br><br>";
+   print "<b>BEGIN:</b>  $fields[4]<br><br>";
+   print "<b>END:</b>  $fields[5]<br><br>";
+   print "<b>TYPE:</b>  $fields[6]<br><br>";
+   print "<b>COMMENTS:</b>  $fields[7]<br><br>";
    print "<a href=\"$cgiurl\">ENTER ANOTHER REQUEST</a><br><br>\n";
    print "</body></html>\n";
    exit;
