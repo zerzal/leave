@@ -82,10 +82,10 @@ foreach $pair (@pairs) {
   my $now = $dt;
 
 # if required information left out
-if (!$FORM{'pid'}) {
-$err = "PID";
-&error;
-}
+#if (!$FORM{'pid'}) {
+#$err = "PID";
+#&error;
+#}
 if (!$FORM{'person'}) {
 $err = "your name";
 &error;
@@ -174,8 +174,8 @@ print "<html><head><title>LIFE SAFETY SYSTEMS LEAVE REQUEST $ver</title></head>\
 print "<body><FONT SIZE = 5><b>LIFE SAFETY SYSTEMS<br>LEAVE REQUEST</b></FONT><FONT SIZE = 2 color = red>\&nbsp\;\&nbsp\;<b>$ver</b><br><br>\n";
 print "* </font><i> = Required fields</i><br><br>\n";
 print "<form method=POST action= $cgiurl>\n";
-print "<FONT SIZE = 2 color = red>* </font>Enter Your <b>PID</b>:\&nbsp\;\&nbsp\;\n";
-print "<input id=pid name=pid type=text><br><br>";
+#print "<FONT SIZE = 2 color = red>* </font>Enter Your <b>PID</b>:\&nbsp\;\&nbsp\;\n";
+#print "<input id=pid name=pid type=text><br><br>";
 #Employee pick
 print "<FONT SIZE = 2 color = red>* </font>Choose your <b>NAME</b>\:\&nbsp\;\&nbsp\;\n";
 print  "<select name=person>\n";
@@ -227,7 +227,7 @@ print "<FONT SIZE = 2 color = red>* </font>Who is your <b>SUPERVISOR</b>\?\:\&nb
 print  "<select name=super>\n";
 print  "<option></option>\n";
 print  "<option value='David.Sharpe\@facilities.unc.edu'>Sharpe, David</option>\n";
-#print  "<option value='dayers\@fac.unc.edu'>Ayers, Dwayne</option>\n"; # rem out line for production
+print  "<option value='dayers\@fac.unc.edu'>Ayers, Dwayne</option>\n"; # rem out line for production
 print  "<option value='Todd.Going\@facilities.unc.edu'>Going, Todd</option>\n";
 print  "<option value='Sherwood.McLamb\@facilities.unc.edu'>McLamb, Sherwood</option>\n";
 print  "<option value='michael.d.oakley\@facilities.unc.edu'>Oakley, Michael</option>\n";
@@ -452,7 +452,7 @@ print "Content-type: text/html\n\n";
 print "<html><head><title>LIFE SAFETY SYSTEMS LEAVE REQUEST OUTPUT</title></head>\n";
 print "<body><FONT SIZE = 5><b>LIFE SAFETY SYSTEMS<br>LEAVE REQUEST OUTPUT</b></FONT><FONT SIZE = 2 color = red>\&nbsp\;\&nbsp\;<b>$ver</b></font><br><br>\n";
 print "$now<br><br>";
-print "<b>PID:</b> $FORM{'pid'}<br><br>";
+#print "<b>PID:</b> $FORM{'pid'}<br><br>";
 print "<b>NAME:</b> $FORM{'person'}<br><br>";
 print "<b>SUPERVISOR'S EMAIL:</b> $FORM{'super'}<br><br>";
 print "<b>EMAIL:</b> $FORM{'email'}<br><br>";
@@ -528,7 +528,7 @@ $setime =~ s/-//g;
 
 open TMP, ">$tmptxt";
 print TMP "$now\n";
-print TMP "$FORM{'pid'}\n";
+#print TMP "$FORM{'pid'}\n";
 print TMP "$FORM{'person'}\n";
 print TMP "$FORM{'super'}\n";
 print TMP "$FORM{'email'}\n";
@@ -545,7 +545,8 @@ $setime = $setime."00";
 open ATA, ">$ata";
 print ATA "BEGIN:VCALENDAR\n";
 print ATA "BEGIN:VEVENT\n";
-print ATA "UID:$FORM{'pid'}"."$curzulu\n";
+#print ATA "UID:$FORM{'pid'}"."$curzulu\n";
+print ATA "UID:$FORM{'person'}"."$curzulu\n";
 print ATA "DTSTAMP:$curzulu\n";
 print ATA "DTSTART;TZID=/US/Eastern:$sbtime\n";
 print ATA "DTEND;TZID=/US/Eastern:$setime\n";
