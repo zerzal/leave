@@ -231,7 +231,6 @@ print  "<option value='David.Sharpe\@facilities.unc.edu'>Sharpe, David</option>\
 print  "<option value='Todd.Going\@facilities.unc.edu'>Going, Todd</option>\n";
 print  "<option value='Sherwood.McLamb\@facilities.unc.edu'>McLamb, Sherwood</option>\n";
 print  "<option value='michael.d.oakley\@facilities.unc.edu'>Oakley, Michael</option>\n";
-print  "<option value='john.albrechtsen\@fac.unc.edu'>Albrechtsen, John </option>\n";
 print  "</select>\n";
 print  "<br><br>";
 print "Enter <b>YOUR EMAIL</b> for a copy <br>and quick calendar entry file:\&nbsp\;\&nbsp\;\&nbsp\;\&nbsp\;\&nbsp\;\&nbsp\;";
